@@ -1,3 +1,4 @@
+# Requires FFMPEG
 import os
 import sys
 from pydub import AudioSegment
@@ -24,8 +25,12 @@ files = listFiles(sys.argv[1])
 zipObj = ZipFile("noSilence.zip", "w")
 
 for file in files:
-  subprocess.call(["ffmpeg", "-i", f"{sys.argv[1]}/{file}",
-                   "input.wav"])
+  subprocess.call([
+      "ffmpeg",
+      "-i",
+      f"{sys.argv[1]}/{file}",
+      "input.wav"
+  ])
 
   sound = AudioSegment.from_file("input.wav", format="wav")
 

@@ -1,3 +1,4 @@
+# Requires FFMPEG
 import sys
 from pydub import AudioSegment
 import subprocess
@@ -11,8 +12,11 @@ def detectSilence(sound, silenceThreshold=-30.0, chunkSize=10):
   return trimMs
 
 
-subprocess.call(["ffmpeg", "-i", f"{sys.argv[1]}",
-                 "input.wav"])
+subprocess.call([
+    "ffmpeg", "-i",
+    f"{sys.argv[1]}",
+    "input.wav"
+])
 
 sound = AudioSegment.from_file("input.wav", format="wav")
 
