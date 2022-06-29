@@ -1,4 +1,3 @@
-# Requires youtube-dl and FFMPEG
 import subprocess
 import os
 import sys

@@ -1,4 +1,3 @@
-# Requires FFMPEG
 import os
 import sys
 from pydub import AudioSegment
