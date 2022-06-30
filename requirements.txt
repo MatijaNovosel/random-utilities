@@ -1,2 +1,4 @@
 pydub
 ffmpeg-python
+beautifulsoup4
+pyppeteer
